@@ -101,7 +101,7 @@ export default {
 
       if(!this.produto.id){
 
-        Produto.salvar(this.produto).then(resposta => {
+        Produto.salvar(this.produto).then(() => {
           this.produto = {}
           alert('Cadastrado com sucesso!')
           this.listar()
@@ -112,7 +112,7 @@ export default {
 
       }else{
 
-        Produto.atualizar(this.produto).then(resposta => {
+        Produto.atualizar(this.produto).then(() => {
           this.produto = {}
           this.errors = {}
           alert('Atualizado com sucesso!')
@@ -134,7 +134,7 @@ export default {
 
       if(confirm('Deseja excluir o produto?')){
 
-        Produto.apagar(produto).then(resposta => {
+        Produto.apagar(produto).then(() => {
           this.listar()
           this.errors = {}
         }).catch(e => {
